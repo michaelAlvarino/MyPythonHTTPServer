@@ -9,6 +9,8 @@ class MyRequestHandler(http.server.SimpleHTTPRequestHandler):
         # add something to check if it's an api request
         if not "api" in parsed:
             self.get_file(parsed)
+        else:
+        	self.get_api(parsed)
 
     def get_file(self, parsedURI):
     	# append index.html or .html if necessary
