@@ -7,7 +7,7 @@ class MyRequestHandler(http.server.SimpleHTTPRequestHandler):
         self.log_message("uri: " + urllib.parse.urlparse(self.path)[2])
         parsed = urllib.parse.urlparse(self.path)[2].split("/")
         # add something to check if it's an api request
-        if 1==1:
+        if not "api" in parsed:
             self.get_file(parsed)
 
     def get_file(self, parsedURI):
