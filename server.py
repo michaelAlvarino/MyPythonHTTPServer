@@ -38,7 +38,7 @@ class MyRequestHandler(http.server.SimpleHTTPRequestHandler):
         self.wfile.write(f.read())
 
     def get_api(self, parsedURI):
-        pass
+    	self.get_file(["/400NotFound.html"])
 
 # server address
 server_address = ('localhost', 8000)
